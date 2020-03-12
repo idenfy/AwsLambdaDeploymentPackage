@@ -1,5 +1,8 @@
 # Release history
 
+#### 1.2.2
+Make sh files executable, add more logging, fix sh bugs.
+
 #### 1.2.1
 Fix manifest file.
 

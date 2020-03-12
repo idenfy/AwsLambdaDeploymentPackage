@@ -38,19 +38,19 @@ rm -rf *.egg-info build dist
 # Create project's source distribution.
 # Read more about this command here:
 # https://docs.python.org/3.6/distutils/sourcedist.html
-${PYTHON} setup.py sdist
+python setup.py sdist
 
 if [[ "$ENVIRONMENT" = "none" ]]; then
     # Install the package.
     # Read more about installing python packages here:
     # https://packaging.python.org/tutorials/installing-packages/
-    ${PYTHON} -m pip install dist/*
+    python -m pip install dist/*
 elif [[ "$ENVIRONMENT" = "dev" || "$ENVIRONMENT" = "prod" ]]
 then
     # Install the package by passing custom options with "install-option".
     # Read more about this:
     # https://pip.pypa.io/en/stable/reference/pip_install/#id30
-    ${PYTHON} -m pip install dist/* --install-option=--environment=$ENVIRONMENT
+    python -m pip install dist/* --install-option=--environment=$ENVIRONMENT
 else
     echo "Unsupported environment - should be prod or dev."
     # Remove leftovers.

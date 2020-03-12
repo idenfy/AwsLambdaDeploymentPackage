@@ -16,10 +16,16 @@ class DeploymentPackage:
 
         # Generate a semi-random path for a deployment package for this session.
         self.__root = f'/tmp/aws-lambda-deployment-package/{str(uuid.uuid4())}'
+        logr.info(f'Working root path: {self.__root}.')
 
         self.__venv_path = f'{self.__root}/venv'
+        logr.info(f'Venv path: {self.__venv_path}.')
+
         self.__install_path = f'{self.__root}/install'
+        logr.info(f'Install directory: {self.__install_path}.')
+
         self.__package_path = f'{self.__root}/package/package.zip'
+        logr.info(f'Path to deployment package zip file: {self.__package_path}.')
 
         self.__pre_install = [
             os.path.join(self.__dir, 'lambda_pre_install.sh'),
@@ -35,7 +41,13 @@ class DeploymentPackage:
 
         self.__post_install = [
             os.path.join(self.__dir, 'lambda_post_install.sh'),
-            self.__venv_path
+            self.__venv_path,
+            '--omit_wheels',
+            '--omit_pip',
+            '--omit_setup',
+            '--omit_cfnlint',
+            '--omit_pycountry_locales',
+            '--omit_moto'
         ]
 
         self.__pre_build = [
