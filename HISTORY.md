@@ -1,5 +1,8 @@
 # Release history
 
+#### 1.2.0
+Expose path to install dir.
+
 #### 1.1.0
 Expose path to deployment package property.
 

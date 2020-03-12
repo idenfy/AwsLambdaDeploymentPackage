@@ -8,7 +8,7 @@ with open('HISTORY.md') as history_file:
 
 setup(
     name='aws_lambda_deployment_package',
-    version='1.1.0',
+    version='1.2.0',
     license='GNU GENERAL PUBLIC LICENSE Version 3',
     packages=find_packages(exclude=['venv', 'test']),
     description=(

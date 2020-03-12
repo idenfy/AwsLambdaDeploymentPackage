@@ -61,6 +61,10 @@ class DeploymentPackage:
     def path_to_deployment_package(self) -> str:
         return self.__package_path
 
+    @property
+    def path_to_install_dir(self) -> str:
+        return self.__install_path
+
     def pre_install(self) -> None:
         logr.info('Pre-installing...')
         self.__call(self.__pre_install)
