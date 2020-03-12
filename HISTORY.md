@@ -1,5 +1,8 @@
 # Release history
 
+#### 1.2.1
+Fix manifest file.
+
 #### 1.2.0
 Expose path to install dir.
 
