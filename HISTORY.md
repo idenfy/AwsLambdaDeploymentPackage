@@ -1,5 +1,8 @@
 # Release history
 
+#### 1.2.3
+Bump.
+
 #### 1.2.2
 Make sh files executable, add more logging, fix sh bugs.
 
