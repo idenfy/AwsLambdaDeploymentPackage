@@ -19,7 +19,7 @@ class DeploymentPackage:
 
         self.__venv_path = f'{self.__root}/venv'
         self.__install_path = f'{self.__root}/install'
-        self.__package_path = f'{self.__root}/package'
+        self.__package_path = f'{self.__root}/package/package.zip'
 
         self.__pre_install = [
             os.path.join(self.__dir, 'lambda_pre_install.sh'),
@@ -56,6 +56,10 @@ class DeploymentPackage:
             self.__venv_path,
             self.__install_path,
         ]
+
+    @property
+    def path_to_deployment_package(self) -> str:
+        return self.__package_path
 
     def pre_install(self) -> None:
         logr.info('Pre-installing...')
